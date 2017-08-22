@@ -89,7 +89,8 @@ export class AceJump {
         this.config.finder.range = config.get<number>("finder.range");
         this.config.finder.skipSelection = config.get<boolean>("finder.skipSelection");
         this.config.finder.onlyInitialLetter = config.get<boolean>("finder.onlyInitialLetter");
-
+        this.config.finder.jumpToAfterCharacter = config.get<boolean>("finder.jumpToAfterCharacter");
+        
         this.placeholderCalculus.load(this.config);
         this.placeHolderDecorator.load(this.config);
     }
@@ -146,6 +147,9 @@ export class AceJump {
                     });
             })
                 .then((placeholder: PlaceHolder) => {
+                    if (this.config.finder.jumpToAfterCharacter) {
+                        ++placeholder.character;
+                    }
                     action(editor, placeholder);
                     vscode.window.setStatusBarMessage("AceJump: Jumped!", 2000);
                     jumpResolve();

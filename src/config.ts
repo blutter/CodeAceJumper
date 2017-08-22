@@ -28,4 +28,5 @@ class FinderConfig {
     range: number;
     skipSelection: boolean = false;
     onlyInitialLetter: boolean = true;
+    jumpToAfterCharacter: boolean = false;
 }

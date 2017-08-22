@@ -38,6 +38,7 @@ This extension contributes the following settings:
 * `aceJump.finder.range`: if no selection is made, maximum number of lines from the active cursors' line which should be considered for a match
 * `aceJump.finder.skipSelection`: don't acejump in selections
 * `aceJump.finder.onlyInitialLetter`: if enabled, will search for starting character of the words, otherwise it will search for any characters (this also mean special characters, don't try space :D)
+* `aceJump.finder.jumpToAfterCharacter`: if enabled, will jump to the position immediately after the matching character, otherwise it will jump to the position before the matching character
 
 ### 1.0.0
 
